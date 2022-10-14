@@ -7,17 +7,17 @@ import { saveState } from "../../utils/storage"
 
 const Login = () => {
     const [state, setState] = useState({ phone: '', password: '' })
-    // const location = useHistory()
-    const { setValues, values } = useContext(Con().context)
+    const { setValues } = useContext(Con().context)
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         request.public.post('auth/login/', state).then((res) => {
             console.log({ res })
             localStorage.setItem('user', JSON.stringify({ isLoggedIn: true, token: res.data.data }))
             setValues({ isLoggedIn: true, token: res.data.data })
-
+            window.location.reload()
         })
     }
+
     return (
         <Container my={40} size={'xl'}>
             <h2>Login</h2>
