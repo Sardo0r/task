@@ -20,6 +20,7 @@ const Home = () => {
                 <Group position={'center'}>
                     {product?.map((item: any) => {
                         return <Card shadow={"md"}>
+                            <Text>Products</Text>
                             <Stack>
                                 <div>{item?.attachmentList?.map((itm: any) => {
                                     return <img width={30} src={`https://profitmodel-server.herokuapp.com/api/product/${item.id}/photo/${itm.id}`} />
