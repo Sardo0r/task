@@ -1,4 +1,4 @@
-import { Card, Container, Group, Stack } from "@mantine/core"
+import { Card, Container, Group, Stack, Text } from "@mantine/core"
 import { useEffect, useState } from "react"
 import request from "../../api"
 
